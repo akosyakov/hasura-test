@@ -1,0 +1,23 @@
+ports:
+  - port: 8080
+    onOpen: ignore
+  - port: 9001
+    onOpen: ignore
+  - port: 9000
+    onOpen: ignore
+  - port: 9693
+    onOpen: ignore
+  - port: 9695
+    onOpen: open-browser
+  - port: 4000
+    onOpen: ignore
+  - port: 5432
+    onOpen: ignore
+  - port: 3000
+    onOpen: open-browser
+
+tasks:
+  - name: Install Hasura & Nhost
+    command: npm install hasura-cli -g && npm install nhost -g && nhost dev
+  - name: npm install
+    init: npm install
